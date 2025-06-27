@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QA Assessment Co-Pilot</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-logos">
+                <div class="logo-left">
+                    <div class="telus-logo-placeholder">TELUS DIGITAL</div>
+                </div>
+                <div class="logo-right">
+                    <div class="partner-logo-placeholder">PARTNER LOGO</div>
+                </div>
+            </div>
+            <h1>🔧 Quality Engineering Assessment Co-Pilot</h1>
+            <p class="subtitle">Structured QE maturity assessment and ROI calculation for quality transformation</p>
+        </header>
+
+        <div class="progress-container">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <span class="progress-text" id="progressText">Question 1 of 32</span>
+        </div>
+
+        <div class="assessment-container">
+            <div class="question-card" id="questionCard">
+                <div class="section-badge" id="sectionBadge">Initial Question</div>
+                <h2 class="question-title" id="questionTitle">Do you currently have a formal QA or QE practice in place?</h2>
+                <div class="question-content" id="questionContent">
+                    <div class="radio-group" id="radioGroup">
+                        <label class="radio-option">
+                            <input type="radio" name="response" value="yes">
+                            <span class="radio-custom"></span>
+                            <span class="radio-text">Yes</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="response" value="no">
+                            <span class="radio-custom"></span>
+                            <span class="radio-text">No</span>
+                        </label>
+                    </div>
+                    
+                    <div class="checkbox-group hidden" id="checkboxGroup">
+                        <!-- Checkboxes will be populated dynamically -->
+                    </div>
+                    
+                    <div class="text-input-group hidden" id="textInputGroup">
+                        <label for="textResponse" class="input-label">Your Response:</label>
+                        <input type="text" id="textResponse" class="text-input" placeholder="Enter your response...">
+                    </div>
+
+                    <div class="textarea-group hidden" id="textareaGroup">
+                        <label for="textareaResponse" class="input-label">Your Response:</label>
+                        <textarea id="textareaResponse" class="textarea-input" rows="4" placeholder="Enter detailed response..."></textarea>
+                    </div>
+
+                    <div class="notes-section">
+                        <label for="notes" class="notes-label">📝 Optional Notes:</label>
+                        <textarea id="notes" class="notes-input" rows="2" placeholder="Add any additional context or notes..."></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="navigation-buttons">
+                <button class="btn btn-secondary" id="backBtn" disabled>← Back</button>
+                <button class="btn btn-primary" id="nextBtn">Next →</button>
+            </div>
+        </div>
+
+        <div class="summary-container hidden" id="summaryContainer">
+            <div class="summary-card">
+                <h2>📊 Assessment Summary</h2>
+                <div id="summaryContent"></div>
+                <div class="summary-actions">
+                    <button class="btn btn-primary" id="calculateROIBtn">Calculate ROI</button>
+                    <button class="btn btn-secondary" id="downloadReportBtn">Download Report</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="roi-container hidden" id="roiContainer">
+            <div class="roi-card">
+                <h2>💰 ROI Calculation</h2>
+                <div id="roiContent"></div>
+            </div>
+        </div>
+
+        <div class="recommendations-container hidden" id="recommendationsContainer">
+            <div class="recommendations-card">
+                <h2>✅ Recommendations</h2>
+                <div id="recommendationsContent"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
